@@ -1,22 +1,107 @@
 import Image from "next/image";
 import { Container } from "./ui/Container";
 import { Reveal } from "./ui/Reveal";
-import { IconLinkedIn } from "./icons";
+import { IconChevronRight, IconLinkedIn, IconMail, IconPhone } from "./icons";
+
+const STUDIO_PHONE_HREF = "tel:+390187777181";
+const STUDIO_EMAIL = "ngconti@studidiavvocati.com";
 
 const TEAM = [
   {
+    initials: "NGC",
+    name: "Nicola Giusteschi Conti",
+    roleLabel: "Avvocato, Fondatore",
+    role: "Diritto civile, penale e amministrativo — giudice onorario dal 2016",
+    photo: "/generated/nicola-conti.jpg",
+    tone: "bg-ember/10 text-ember-dark",
+    linkedin: "https://it.linkedin.com/in/nicolagiusteschiconti",
+  },
+  {
     initials: "AR",
     name: "Alberto Russo",
+    roleLabel: "Avvocato",
     role: "Diritto internazionale, europrogettazione, international relations management",
+    photo: null,
     tone: "bg-navy/10 text-navy",
+    linkedin: null,
   },
   {
     initials: "RPD",
     name: "Raffaella Ponari Deslarzes",
+    roleLabel: "Avvocata",
     role: "Diritto penale e tributario",
+    photo: null,
     tone: "bg-ember/10 text-ember-dark",
+    linkedin: null,
   },
 ];
+
+function TeamCard({ member }: { member: (typeof TEAM)[number] }) {
+  return (
+    <div className="flex h-full items-center gap-5 rounded-[24px] border border-line bg-card/40 p-6">
+      <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl">
+        {member.photo ? (
+          <Image
+            src={member.photo}
+            alt={member.name}
+            fill
+            sizes="80px"
+            className="photo-mono object-cover object-top"
+          />
+        ) : (
+          <div
+            className={`flex h-full w-full items-center justify-center font-display text-lg font-bold ${member.tone}`}
+          >
+            {member.initials}
+          </div>
+        )}
+      </div>
+
+      <div className="min-w-0 flex-1">
+        <p className="text-xs font-medium uppercase tracking-[0.12em] text-ember">{member.roleLabel}</p>
+        <p className="mt-1 truncate font-display text-lg font-bold text-navy">{member.name}</p>
+        <p className="mt-1 truncate text-[13px] leading-relaxed text-muted" title={member.role}>
+          {member.role}
+        </p>
+        <div className="mt-3 flex items-center gap-2">
+          <a
+            href={STUDIO_PHONE_HREF}
+            aria-label={`Chiama lo studio per ${member.name}`}
+            className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-ember text-paper transition-colors hover:bg-ember-dark"
+          >
+            <IconPhone className="h-3.5 w-3.5" />
+          </a>
+          <a
+            href={`mailto:${STUDIO_EMAIL}`}
+            aria-label={`Scrivi allo studio per ${member.name}`}
+            className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-ember text-paper transition-colors hover:bg-ember-dark"
+          >
+            <IconMail className="h-3.5 w-3.5" />
+          </a>
+          {member.linkedin && (
+            <a
+              href={member.linkedin}
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label={`Profilo LinkedIn di ${member.name}`}
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-ember text-paper transition-colors hover:bg-ember-dark"
+            >
+              <IconLinkedIn className="h-3.5 w-3.5" />
+            </a>
+          )}
+        </div>
+      </div>
+
+      <a
+        href="#contatti"
+        aria-label={`Contatta lo studio per parlare con ${member.name}`}
+        className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-muted transition-colors hover:bg-ember/10 hover:text-ember"
+      >
+        <IconChevronRight className="h-5 w-5" />
+      </a>
+    </div>
+  );
+}
 
 const CREDENTIALS = [
   "Avvocato dal 2000, esercita alla Spezia",
@@ -113,26 +198,15 @@ export function Studio() {
                 </p>
               </div>
             </Reveal>
-
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-1">
-              {TEAM.map((member, i) => (
-                <Reveal key={member.name} delay={0.15 + i * 0.08}>
-                  <div className="h-full rounded-[24px] border border-line bg-card/60 p-7">
-                    <div
-                      className={`inline-flex h-14 w-14 items-center justify-center rounded-full font-display text-base font-bold ${member.tone}`}
-                    >
-                      {member.initials}
-                    </div>
-                    <p className="mt-5 font-display text-xl font-bold text-navy">{member.name}</p>
-                    <p className="mt-2 text-[15px] leading-relaxed text-muted">{member.role}</p>
-                    <p className="mt-3 text-xs font-medium uppercase tracking-[0.15em] text-muted/70">
-                      Foto in arrivo
-                    </p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
           </div>
+        </div>
+
+        <div className="mt-16 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {TEAM.map((member, i) => (
+            <Reveal key={member.name} delay={i * 0.08}>
+              <TeamCard member={member} />
+            </Reveal>
+          ))}
         </div>
       </Container>
     </section>

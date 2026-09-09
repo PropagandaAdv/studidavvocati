@@ -53,8 +53,8 @@ export function Hero() {
 
       <ScrollCue />
 
-      <Container className="relative z-10 flex h-full flex-col justify-between pb-10 pt-32 sm:pb-14 sm:pt-36">
-        <div className="max-w-2xl">
+      <Container className="relative z-10 flex h-full flex-col justify-between gap-10 pb-10 pt-32 sm:pb-14 sm:pt-36 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:pb-16 lg:pt-28">
+        <div className="max-w-2xl lg:min-w-0 lg:flex-1">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -105,7 +105,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-16 w-full max-w-md rounded-[24px] bg-ember p-7 sm:p-8"
+          className="w-full max-w-md shrink-0 rounded-[24px] bg-ember p-7 sm:p-8 lg:w-[380px] lg:max-w-none"
         >
           <p className="font-display text-xl font-bold leading-snug text-paper">
             Serve un consulto? Raccontaci il tuo caso.
