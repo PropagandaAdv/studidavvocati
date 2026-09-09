@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: #F5F6F8;
+  color: #2B2B2B;
+}
+
+::selection {
+  background-color: #E66023;
+  color: #F5F6F8;
+}
+
+:focus-visible {
+  outline: 2px solid #E66023;
+  outline-offset: 3px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.container-edge {
+  padding-left: max(1.5rem, env(safe-area-inset-left));
+  padding-right: max(1.5rem, env(safe-area-inset-right));
+}
+
+.hairline {
+  background-image: linear-gradient(to right, rgba(43,43,43,0.12), rgba(43,43,43,0.12));
+  background-size: 100% 1px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.numeral {
+  font-variant-numeric: oldstyle-nums;
+  font-feature-settings: "onum" 1;
+}
