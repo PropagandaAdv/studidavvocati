@@ -38,7 +38,7 @@ const AREAS = [
   },
   {
     n: "06",
-    title: "Cose Strane",
+    title: "Altri Casi",
     text: "Non hai trovato il tuo caso? Prova a chiedere: magari lo abbiamo già affrontato.",
     tags: ["Amministrativo — TAR/CDS", "Navigazione", "Pubblico impiego", "Brevetti & IP", "Privacy", "Appalti"],
   },
