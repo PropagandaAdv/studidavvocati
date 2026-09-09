@@ -14,7 +14,7 @@ export function Footer() {
       <Container className="py-20">
         <div className="grid grid-cols-1 gap-14 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
           <div>
-            <p className="font-display text-2xl font-light">Studi Di Avvocati</p>
+            <p className="font-display text-2xl font-bold">Studi Di Avvocati</p>
             <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-paper/60">
               La soluzione studiata e preparata da giuristi che collaborano per la
               risoluzione delle vertenze, nel reciproco rispetto delle posizioni.

@@ -38,7 +38,7 @@ export function Studio() {
         <div className="mt-14 grid grid-cols-1 gap-16 lg:grid-cols-[0.55fr_0.45fr] lg:gap-20">
           <div>
             <Reveal>
-              <h2 className="text-balance font-display text-3xl font-light leading-tight text-navy sm:text-4xl lg:text-[2.6rem]">
+              <h2 className="text-balance font-display text-3xl font-bold leading-tight text-navy sm:text-4xl lg:text-[2.6rem]">
                 Nato alla Spezia, con lo sguardo rivolto oltre i confini del Tribunale.
               </h2>
             </Reveal>
@@ -90,13 +90,13 @@ export function Studio() {
 
           <div className="flex flex-col gap-8">
             <Reveal delay={0.05}>
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[24px]">
+              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[24px]">
                 <Image
-                  src="/generated/studio-luce.jpg"
-                  alt=""
+                  src="/generated/nicola-conti.jpg"
+                  alt="Avv. Nicola Giusteschi Conti"
                   fill
                   sizes="(min-width: 1024px) 40vw, 100vw"
-                  className="object-cover"
+                  className="photo-mono object-cover object-top"
                   priority={false}
                 />
               </div>
@@ -117,14 +117,17 @@ export function Studio() {
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-1">
               {TEAM.map((member, i) => (
                 <Reveal key={member.name} delay={0.15 + i * 0.08}>
-                  <div className="h-full rounded-[20px] border border-line bg-card/60 p-7">
+                  <div className="h-full rounded-[24px] border border-line bg-card/60 p-7">
                     <div
-                      className={`inline-flex h-12 w-12 items-center justify-center rounded-full font-display text-base font-medium ${member.tone}`}
+                      className={`inline-flex h-14 w-14 items-center justify-center rounded-full font-display text-base font-bold ${member.tone}`}
                     >
                       {member.initials}
                     </div>
-                    <p className="mt-5 font-display text-xl font-medium text-navy">{member.name}</p>
+                    <p className="mt-5 font-display text-xl font-bold text-navy">{member.name}</p>
                     <p className="mt-2 text-[15px] leading-relaxed text-muted">{member.role}</p>
+                    <p className="mt-3 text-xs font-medium uppercase tracking-[0.15em] text-muted/70">
+                      Foto in arrivo
+                    </p>
                   </div>
                 </Reveal>
               ))}

@@ -55,3 +55,10 @@ body {
   font-variant-numeric: oldstyle-nums;
   font-feature-settings: "onum" 1;
 }
+
+/* Shared photographic treatment: every generated/real photo or video on the
+   site is desaturated so the only color on the page comes from UI chrome
+   (CTA, tags, logo) — matches the Ploum reference in the brief. */
+.photo-mono {
+  filter: grayscale(1) contrast(1.08) brightness(0.96);
+}

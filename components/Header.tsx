@@ -44,7 +44,12 @@ export function Header() {
       >
         <Container className="flex items-center justify-between">
           {/* Placeholder wordmark — sostituire con il file logo ufficiale (sigillo GC&R&PD + wordmark) */}
-          <a href="#top" className="font-display text-lg font-medium tracking-tight text-navy">
+          <a
+            href="#top"
+            className={`font-display text-lg font-bold tracking-tight transition-colors ${
+              compact ? "text-navy" : "text-paper"
+            }`}
+          >
             Studi Di Avvocati
           </a>
 
@@ -53,7 +58,9 @@ export function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-[15px] text-ink/75 transition-colors hover:text-ember"
+                className={`text-[15px] transition-colors hover:text-ember ${
+                  compact ? "text-ink/75" : "text-paper/85"
+                }`}
               >
                 {link.label}
               </a>
@@ -72,7 +79,9 @@ export function Header() {
               onClick={() => setMenuOpen((v) => !v)}
               aria-expanded={menuOpen}
               aria-label={menuOpen ? "Chiudi il menu" : "Apri il menu"}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line text-navy lg:hidden"
+              className={`inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors lg:hidden ${
+                compact ? "border-line text-navy" : "border-paper/40 text-paper"
+              }`}
             >
               {menuOpen ? <IconClose className="h-5 w-5" /> : <IconMenu className="h-5 w-5" />}
             </button>

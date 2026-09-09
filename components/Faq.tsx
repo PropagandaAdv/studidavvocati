@@ -72,7 +72,7 @@ export function Faq() {
       <Container className="max-w-4xl">
         <Reveal>
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted">04 — Domande frequenti</p>
-          <h2 className="mt-4 max-w-xl text-balance font-display text-3xl font-light leading-tight text-navy sm:text-4xl">
+          <h2 className="mt-4 max-w-xl text-balance font-display text-3xl font-bold leading-tight text-navy sm:text-4xl">
             Le domande che ci fanno più spesso.
           </h2>
         </Reveal>

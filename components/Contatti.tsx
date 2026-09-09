@@ -56,7 +56,7 @@ export function Contatti() {
       <Container>
         <Reveal>
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted">05 — Contatti</p>
-          <h2 className="mt-4 max-w-xl text-balance font-display text-3xl font-light leading-tight text-navy sm:text-4xl">
+          <h2 className="mt-4 max-w-xl text-balance font-display text-3xl font-bold leading-tight text-navy sm:text-4xl">
             Raccontaci il tuo caso.
           </h2>
         </Reveal>
@@ -158,11 +158,11 @@ export function Contatti() {
                   alt=""
                   fill
                   sizes="(min-width: 1024px) 30vw, 100vw"
-                  className="object-cover"
+                  className="photo-mono object-cover"
                 />
               </div>
               <div className="p-8 sm:p-10">
-              <p className="font-display text-xl font-medium text-navy">Studi Di Avvocati</p>
+              <p className="font-display text-xl font-bold text-navy">Studi Di Avvocati</p>
               <ul className="mt-8 space-y-6 text-[15px] text-ink/80">
                 <li className="flex gap-4">
                   <IconPin className="mt-0.5 h-5 w-5 shrink-0 text-ember" />

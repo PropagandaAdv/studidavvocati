@@ -17,7 +17,7 @@ export function Numeri() {
         alt=""
         fill
         sizes="100vw"
-        className="pointer-events-none object-cover opacity-60"
+        className="photo-mono pointer-events-none object-cover opacity-60"
       />
       <Container className="relative">
         <Reveal>

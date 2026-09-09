@@ -53,7 +53,7 @@ export function Competenze() {
           alt=""
           fill
           sizes="100vw"
-          className="object-cover object-right"
+          className="photo-mono object-cover object-right"
         />
       </div>
       <Container className="relative">
@@ -61,7 +61,7 @@ export function Competenze() {
           <div className="flex flex-col justify-between gap-6 border-b border-line pb-8 sm:flex-row sm:items-end">
             <div>
               <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted">02 — Competenze</p>
-              <h2 className="mt-4 max-w-xl text-balance font-display text-3xl font-light leading-tight text-navy sm:text-4xl">
+              <h2 className="mt-4 max-w-xl text-balance font-display text-3xl font-bold leading-tight text-navy sm:text-4xl">
                 Sei aree, un solo metodo.
               </h2>
             </div>
@@ -73,16 +73,16 @@ export function Competenze() {
           </div>
         </Reveal>
 
-        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {AREAS.map((area, i) => (
             <Reveal key={area.n} delay={(i % 3) * 0.06}>
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                className="group h-full border-b border-line py-10 pr-6 sm:py-12 sm:pr-8"
+                className="group h-full rounded-[24px] border border-line bg-card/40 p-8"
               >
-                <span className="font-display text-sm font-medium text-ember">{area.n}</span>
-                <h3 className="mt-4 font-display text-2xl font-medium text-navy transition-colors group-hover:text-ember">
+                <span className="font-display text-sm font-bold text-ember">{area.n}</span>
+                <h3 className="mt-4 font-display text-2xl font-bold text-navy transition-colors group-hover:text-ember">
                   {area.title}
                 </h3>
                 <p className="mt-4 text-[15px] leading-relaxed text-muted">{area.text}</p>
