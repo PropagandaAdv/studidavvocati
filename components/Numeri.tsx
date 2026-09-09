@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "./ui/Container";
 import { Reveal } from "./ui/Reveal";
 
@@ -10,8 +11,15 @@ const STATS = [
 
 export function Numeri() {
   return (
-    <section className="bg-navy py-20 text-paper md:py-24">
-      <Container>
+    <section className="relative overflow-hidden bg-navy py-20 text-paper md:py-24">
+      <Image
+        src="/generated/numeri-texture.jpg"
+        alt=""
+        fill
+        sizes="100vw"
+        className="pointer-events-none object-cover opacity-60"
+      />
+      <Container className="relative">
         <Reveal>
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-paper/50">
             Vent&rsquo;anni di pratica, non di promesse

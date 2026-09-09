@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Image from "next/image";
 import { Container } from "./ui/Container";
 import { Reveal } from "./ui/Reveal";
 import { IconArrowUpRight, IconClock, IconMail, IconPhone, IconPin } from "./icons";
@@ -150,7 +151,17 @@ export function Contatti() {
           </Reveal>
 
           <Reveal delay={0.2}>
-            <div className="rounded-[24px] border border-line bg-card/60 p-8 sm:p-10">
+            <div className="overflow-hidden rounded-[24px] border border-line bg-card/60">
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  src="/generated/contatti-mappa.jpg"
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 30vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-8 sm:p-10">
               <p className="font-display text-xl font-medium text-navy">Studi Di Avvocati</p>
               <ul className="mt-8 space-y-6 text-[15px] text-ink/80">
                 <li className="flex gap-4">
@@ -185,6 +196,7 @@ export function Contatti() {
                   </span>
                 </li>
               </ul>
+              </div>
             </div>
           </Reveal>
         </div>

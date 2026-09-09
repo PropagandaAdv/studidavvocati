@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "./ui/Container";
 import { Reveal } from "./ui/Reveal";
 import { IconLinkedIn } from "./icons";
@@ -88,6 +89,19 @@ export function Studio() {
           </div>
 
           <div className="flex flex-col gap-8">
+            <Reveal delay={0.05}>
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[24px]">
+                <Image
+                  src="/generated/studio-luce.jpg"
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  className="object-cover"
+                  priority={false}
+                />
+              </div>
+            </Reveal>
+
             <Reveal delay={0.1}>
               <div className="rounded-[24px] bg-navy px-8 py-10 text-paper sm:px-10 sm:py-12">
                 <p className="font-display text-3xl font-light leading-snug sm:text-4xl">

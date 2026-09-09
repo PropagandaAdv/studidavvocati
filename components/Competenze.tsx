@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Container } from "./ui/Container";
 import { Reveal } from "./ui/Reveal";
@@ -45,8 +46,17 @@ const AREAS = [
 
 export function Competenze() {
   return (
-    <section id="competenze" className="bg-paper py-24 md:py-32">
-      <Container>
+    <section id="competenze" className="relative overflow-hidden bg-paper py-24 md:py-32">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-64 opacity-[0.35] mix-blend-multiply sm:h-80">
+        <Image
+          src="/generated/competenze-linee.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-right"
+        />
+      </div>
+      <Container className="relative">
         <Reveal>
           <div className="flex flex-col justify-between gap-6 border-b border-line pb-8 sm:flex-row sm:items-end">
             <div>

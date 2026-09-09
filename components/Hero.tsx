@@ -191,6 +191,24 @@ export function Hero() {
             <HeroMark />
           </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-20 overflow-hidden rounded-[28px] md:mt-28"
+        >
+          <video
+            className="aspect-video w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster="/generated/hero-poster.jpg"
+          >
+            <source src="/generated/hero-loop.mp4" type="video/mp4" />
+          </video>
+        </motion.div>
       </Container>
     </section>
   );
