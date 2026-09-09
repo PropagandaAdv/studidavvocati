@@ -27,7 +27,7 @@ function ScrollCue() {
 
 export function Hero() {
   return (
-    <section id="top" className="relative min-h-[100svh] w-full overflow-hidden bg-navy">
+    <section id="top" className="relative flex min-h-[100svh] w-full items-center overflow-hidden bg-navy">
       <video
         className="photo-mono absolute inset-0 hidden h-full w-full object-cover md:block"
         autoPlay
@@ -53,7 +53,7 @@ export function Hero() {
 
       <ScrollCue />
 
-      <Container className="relative z-10 flex h-full flex-col justify-between gap-10 pb-10 pt-32 sm:pb-14 sm:pt-36 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:pb-16 lg:pt-28">
+      <Container className="relative z-10 flex w-full flex-col gap-10 py-24 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:py-16">
         <div className="max-w-2xl lg:min-w-0 lg:flex-1">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
